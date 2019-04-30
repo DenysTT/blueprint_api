@@ -3,6 +3,7 @@ Install
 -------
 
 ::
+
     clone the repository
     git clone https://github.com/DenysTT/revolut_api.git
 
