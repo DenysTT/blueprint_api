@@ -1,0 +1,18 @@
+mongo:
+    image: mongo:3
+    restart: always
+    mem_limit: 200M
+    ports:
+        - "27017:27017"
+#    volumes:
+#        - "/media/mongo:/data/db"
+
+app:
+   image: den4iks99/revo_api:develop
+   restart: always
+   environment:
+        MONGO_HOST: 'mongo'
+   links:
+       - "mongo:mongo"
+   ports:
+       - "5000:5000"
