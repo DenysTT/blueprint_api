@@ -2,11 +2,12 @@
 Install
 -------
 
-    # clone the repository::
+::
+    # clone the repository
     git clone https://github.com/DenysTT/revolut_api.git
 
 
-Run
+Run application
 ---
 
 ::
