@@ -51,4 +51,26 @@ System Diagram
 -------------
 
 .. image:: images/diagram.png
-  :width: 1000
+   :width: 1000
+
+::
+
+    * For QA/UAT instances only one Spotinst host will be used ($$$)
+    * All infrastructure will be stored in Cloudformation/Terraform templates
+    * I didn't display there CD hosts, GIT, LDAP and etc (which will be definetly present in real life)
+
+
+
+No Downtime deploys
+-------------------
+
+::
+
+    One of the possible approaches 
+    # 1) Jenkins will trigger ansible playbook (DB and Application will be in galaxy-roles)
+    # 2) Hosts will be updated one by one
+    # 3) After updating one hosts post deployment tests will be triggered, and if tests fails deployment won't be processed
+    further to second host
+    # * During update ELB or reverse proxy LB will decide where to route traffic (based on health checks) so if let say
+    first host is updating and health check from this node is absent all traffic will be routed to host2
+
