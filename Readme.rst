@@ -45,3 +45,10 @@ Tests
 
     # run the following command to trigger tests
     $ docker exec -it revolut_api_app_1 pytest
+
+
+System Diagram
+-------------
+
+.. image:: images/diagram.png
+  :width: 1000
