@@ -55,7 +55,9 @@ def count_days_to_birthday(original_date, now):
     """Function which counts days till next birthday"""
     delta1 = datetime(now.year, original_date.month, original_date.day)
     delta2 = datetime(now.year+1, original_date.month, original_date.day)
-    return (min(delta1, delta2) - now).days
+    if (max(delta1, delta2) - now).days > 365:
+        return (min(delta1, delta2) - now).days
+    return (max(delta1, delta2) - now).days
 
 
 def save_user_to_db(username, birthday):

@@ -9,4 +9,5 @@ setup(
         'flask',
         'flask-mongoengine',
         'mongoengine',
+        'pytest',
     ])

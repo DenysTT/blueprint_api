@@ -6,13 +6,14 @@ from datetime import datetime, timedelta
 import os
 
 TEST_DB_NAME = os.getenv('TEST_DB_NAME', 'test_db')
+DB_HOST = os.getenv('MONGO_DB', 'mongo')
 
 
 @pytest.fixture(scope="session", autouse=True)
 def drop_testdb_before_all_tests():
     # prepare something ahead of all tests
     # in this case test_db should be dropped before triggering tests
-    db = connect(TEST_DB_NAME)
+    db = connect(TEST_DB_NAME, host=DB_HOST)
     db.drop_database(TEST_DB_NAME)
 
 
@@ -23,6 +24,7 @@ def client():
     app = create_app({
         'TESTING': True,
         'MONGODB_DB': TEST_DB_NAME,
+        'MONGODB_HOST': DB_HOST,
     })
 
     client = app.test_client()
