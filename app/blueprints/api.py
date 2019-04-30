@@ -56,8 +56,8 @@ def count_days_to_birthday(original_date, now):
     delta1 = datetime(now.year, original_date.month, original_date.day)
     delta2 = datetime(now.year+1, original_date.month, original_date.day)
     if (max(delta1, delta2) - now).days > 365:
-        return (min(delta1, delta2) - now).days
-    return (max(delta1, delta2) - now).days
+        return (min(delta1, delta2) - now).days + 1
+    return (max(delta1, delta2) - now).days + 1
 
 
 def save_user_to_db(username, birthday):

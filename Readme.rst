@@ -66,7 +66,7 @@ No Downtime deploys
 
 ::
 
-    One of the possible approaches 
+    One of the possible approaches
     # 1) Jenkins will trigger ansible playbook (DB and Application will be in galaxy-roles)
     # 2) Hosts will be updated one by one
     # 3) After updating one hosts post deployment tests will be triggered, and if tests fails deployment won't be processed
