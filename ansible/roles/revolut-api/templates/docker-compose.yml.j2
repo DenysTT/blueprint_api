@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+
+  app:
+   image: den4iks99/revo_api:develop
+   restart: always
+   environment:
+        MONGO_HOST: {{ revolut_api_mongo_url }}
+   ports:
+       - "{{ revolut_api_docker_port }}:5000"
+
+   mem_limit: {{ revolut_api_docker_compose_mem_limit }}
+   mem_reservation: {{ revolut_api_docker_compose_mem_reservation }}
+   stop_grace_period: 1m30s

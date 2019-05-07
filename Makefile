@@ -6,3 +6,6 @@ build:
 
 push:
 	docker push $(image)
+
+provision:
+	ansible-playbook --diff -i ansible/inventory --private-key=$(KEY) --vault-password-file=$(VAULT_FILE) ansible/playbook.yml

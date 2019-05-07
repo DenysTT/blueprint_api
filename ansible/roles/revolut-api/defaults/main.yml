@@ -1,0 +1,13 @@
+---
+# defaults file for revolut_api_
+
+revolut_api_docker_workdir: /opt/revolut_api
+revolut_api_docker_version: develop
+revolut_api_docker_image: den4iks99/revo_api
+revolut_api_docker_port: 5000
+
+revolut_api_mongo_url: localhost:27017
+revolut_api_docker_compose_mem_limit: 512m
+revolut_api_docker_compose_mem_reservation: 256m
+
+

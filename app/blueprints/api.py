@@ -13,6 +13,11 @@ log.setLevel(logging.DEBUG)
 api = Blueprint('api', __name__)
 
 
+@api.route('/heartbeat')
+def heartbeat_status():
+    return '', 200
+
+
 @api.route('/hello/<username>', methods=['PUT', 'GET'])
 def put_user_birthday(username=None):
     """Api call which serves both PUT and GET methods, in case of PUT will create/update user with Birthday date in DB

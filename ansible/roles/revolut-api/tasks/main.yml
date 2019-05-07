@@ -1,0 +1,3 @@
+---
+- include: containers.yml
+- include: tests/test.yml
