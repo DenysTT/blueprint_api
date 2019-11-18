@@ -9,7 +9,7 @@ def create_app(test_config=None):
 
 
     if test_config is None:
-        app.config['MONGODB_DB'] = os.getenv('MONGO_DB', 'revolut_api')
+        app.config['MONGODB_DB'] = os.getenv('MONGO_DB', 'blueprint_api')
         app.config['MONGODB_HOST'] = os.getenv('MONGO_HOST', 'mongo')
         app.config['MONGODB_PORT'] = os.getenv('MONGODB_PORT', 27017)
     else:

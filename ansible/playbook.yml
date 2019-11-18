@@ -1,12 +1,12 @@
-- name: Revolut api provision
+- name: blueprint api provision
   become: yes
   serial: 1
   hosts: all
   vars:
-   - revolut_api_docker_workdir: /tmp/revolut_api
-   - revolut_api_docker_version: develop
-   - revolut_api_docker_image: den4iks99/revo_api
-   - revolut_api_docker_port: 5000
-   - revolut_api_mongo_url: localhost:27017
+   - blueprint_api_docker_workdir: /tmp/blueprint_api
+   - blueprint_api_docker_version: develop
+   - blueprint_api_docker_image: den4iks99/blueprint_api
+   - blueprint_api_docker_port: 5000
+   - blueprint_api_mongo_url: localhost:27017
   roles:
-    - revolut-api
+    - blueprint-api

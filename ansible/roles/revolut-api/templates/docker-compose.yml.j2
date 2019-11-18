@@ -3,13 +3,13 @@ version: '2'
 services:
 
   app:
-   image: den4iks99/revo_api:develop
+   image: den4iks99/blueprint_api:develop
    restart: always
    environment:
-        MONGO_HOST: {{ revolut_api_mongo_url }}
+        MONGO_HOST: {{ blueprint_api_mongo_url }}
    ports:
-       - "{{ revolut_api_docker_port }}:5000"
+       - "{{ blueprint_api_docker_port }}:5000"
 
-   mem_limit: {{ revolut_api_docker_compose_mem_limit }}
-   mem_reservation: {{ revolut_api_docker_compose_mem_reservation }}
+   mem_limit: {{ blueprint_api_docker_compose_mem_limit }}
+   mem_reservation: {{ blueprint_api_docker_compose_mem_reservation }}
    stop_grace_period: 1m30s

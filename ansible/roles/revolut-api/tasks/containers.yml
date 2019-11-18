@@ -1,9 +1,9 @@
 ---
 - name: Ensure working directory
-  file: state=directory recurse=yes path={{ revolut_api_docker_workdir }}
+  file: state=directory recurse=yes path={{ blueprint_api_docker_workdir }}
 
 - name: Ensure docker-compose.yml file
-  template: src=docker-compose.yml.j2 dest={{ revolut_api_docker_workdir }}/docker-compose.yml
+  template: src=docker-compose.yml.j2 dest={{ blueprint_api_docker_workdir }}/docker-compose.yml
 
 - name: Pull and Up containers
-  docker_service: project_src={{ revolut_api_docker_workdir }} pull=yes
+  docker_service: project_src={{ blueprint_api_docker_workdir }} pull=yes

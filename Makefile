@@ -1,5 +1,5 @@
 release ?= develop
-image = den4iks99/revo_api:$(release)
+image = den4iks99/blueprint_api:$(release)
 
 build:
 	docker build -t $(image) .

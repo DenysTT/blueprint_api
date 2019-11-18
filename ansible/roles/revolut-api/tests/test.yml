@@ -2,11 +2,11 @@
 - name: Test containers running
   assert:
     that:
-       - "app.revolut_api_app_1.state.running"
-       - "app.revolut_api_app_1.state.status == 'running'"
+       - "app.blueprint_api_app_1.state.running"
+       - "app.blueprint_api_app_1.state.status == 'running'"
 
 - name: Register container pid
-  shell: sudo docker inspect -f \{\{.State.Pid\}\} revolut_api_app_1
+  shell: sudo docker inspect -f \{\{.State.Pid\}\} blueprint_api_app_1
   register: container_pid_1
 
 - name: Wait for 30 seconds to check is container restarting
@@ -14,7 +14,7 @@
     seconds: 30
 
 - name: Register container state
-  shell: sudo docker inspect -f \{\{.State.Restarting\}\} revolut_api_app_1
+  shell: sudo docker inspect -f \{\{.State.Restarting\}\} blueprint_api_app_1
   register: is_container_restarting
 
 - name: Test container is not restarting
@@ -23,7 +23,7 @@
      - "is_container_restarting.stdout == 'false'"
 
 - name: register container pid to ensure that it wasn't changed
-  shell: sudo docker inspect -f \{\{.State.Pid\}\} revolut_api_app_1
+  shell: sudo docker inspect -f \{\{.State.Pid\}\} blueprint_api_app_1
   register: container_pid_2
 
 - name: Check that pid wasn't changed
@@ -32,7 +32,7 @@
 
 - name: Test heartbeat
   uri:
-    url: http://localhost:{{ revolut_api_docker_port }}/heartbeat
+    url: http://localhost:{{ blueprint_api_docker_port }}/heartbeat
   register: result
   retries: 20
   delay: 5

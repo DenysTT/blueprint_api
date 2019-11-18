@@ -8,7 +8,7 @@ mongo:
 #        - "/media/mongo:/data/db"
 
 app:
-   image: den4iks99/revo_api:develop
+   image: den4iks99/blueprint_api:develop
    restart: always
    environment:
         MONGO_HOST: 'mongo'
