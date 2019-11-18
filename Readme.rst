@@ -61,7 +61,7 @@ System Diagram
 
 
 
-No Downtime deploys
+No Downtime deploy (Rolling deployment)
 -------------------
 
 ::
