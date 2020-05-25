@@ -3,7 +3,7 @@ version: '2'
 services:
 
   app:
-   image: "{{ blueprint_api_docker_image }}:develop"
+   image: "{{ blueprint_api_docker_image }}:{{ blueprint_api_docker_version }}"
    restart: always
    environment:
         MONGO_HOST: {{ blueprint_api_mongo_url }}
