@@ -4,7 +4,7 @@
   hosts: all
   vars:
    - blueprint_api_docker_workdir: /tmp/blueprint_api
-   - blueprint_api_docker_version: develop
+   - blueprint_api_docker_version: "{{ lookup('env','APP_VERSION') }}"
    - blueprint_api_docker_image: den4iks99/revo_api
    - blueprint_api_docker_port: 5000
    - blueprint_api_mongo_url: mongo:27017
