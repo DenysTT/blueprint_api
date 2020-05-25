@@ -8,4 +8,4 @@ push:
 	docker push $(image)
 
 provision:
-	ansible-playbook --diff -i ansible/inventory --private-key=/tmp/app.pem ansible/playbook.yml
+	ansible-playbook --diff -i ansible/inventory --private-key=$(KEY) ansible/playbook.yml
