@@ -9,4 +9,4 @@
    - blueprint_api_docker_port: 5000
    - blueprint_api_mongo_url: localhost:27017
   roles:
-    - blueprint-api
+    - revolut-api
